@@ -1,0 +1,663 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/courses_table/": {
+            "get": {
+                "tags": [
+                    "courses_table"
+                ],
+                "description": "get CoursesTable",
+                "operationId": "CoursesTableController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CoursesTable"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "courses_table"
+                ],
+                "description": "create CoursesTable",
+                "operationId": "CoursesTableController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CoursesTable content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CoursesTable"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.CoursesTable"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/courses_table/{id}": {
+            "get": {
+                "tags": [
+                    "courses_table"
+                ],
+                "description": "get CoursesTable by id",
+                "operationId": "CoursesTableController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CoursesTable"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "courses_table"
+                ],
+                "description": "update the CoursesTable",
+                "operationId": "CoursesTableController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CoursesTable content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CoursesTable"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CoursesTable"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "courses_table"
+                ],
+                "description": "delete the CoursesTable",
+                "operationId": "CoursesTableController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/labs_table/": {
+            "get": {
+                "tags": [
+                    "labs_table"
+                ],
+                "description": "get LabsTable",
+                "operationId": "LabsTableController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.LabsTable"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "labs_table"
+                ],
+                "description": "create LabsTable",
+                "operationId": "LabsTableController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for LabsTable content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.LabsTable"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.LabsTable"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/labs_table/{id}": {
+            "get": {
+                "tags": [
+                    "labs_table"
+                ],
+                "description": "get LabsTable by id",
+                "operationId": "LabsTableController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.LabsTable"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "labs_table"
+                ],
+                "description": "update the LabsTable",
+                "operationId": "LabsTableController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for LabsTable content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.LabsTable"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.LabsTable"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "labs_table"
+                ],
+                "description": "delete the LabsTable",
+                "operationId": "LabsTableController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/users_table/": {
+            "get": {
+                "tags": [
+                    "users_table"
+                ],
+                "description": "get UsersTable",
+                "operationId": "UsersTableController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.UsersTable"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "users_table"
+                ],
+                "description": "create UsersTable",
+                "operationId": "UsersTableController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for UsersTable content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UsersTable"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.UsersTable"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/users_table/{id}": {
+            "get": {
+                "tags": [
+                    "users_table"
+                ],
+                "description": "get UsersTable by id",
+                "operationId": "UsersTableController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.UsersTable"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "users_table"
+                ],
+                "description": "update the UsersTable",
+                "operationId": "UsersTableController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for UsersTable content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UsersTable"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.UsersTable"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "users_table"
+                ],
+                "description": "delete the UsersTable",
+                "operationId": "UsersTableController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.CoursesTable": {
+            "title": "CoursesTable",
+            "type": "object",
+            "properties": {
+                "ClassName": {
+                    "type": "string"
+                },
+                "CourseContext": {
+                    "type": "string"
+                },
+                "CourseId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CourseIdstr": {
+                    "type": "string"
+                },
+                "Date": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Datestr": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "LabAddress": {
+                    "type": "string"
+                },
+                "LabContext": {
+                    "type": "string"
+                },
+                "LabId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "LabName": {
+                    "type": "string"
+                },
+                "TeachId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TeachName": {
+                    "type": "string"
+                },
+                "TeachTel": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Week": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.LabsTable": {
+            "title": "LabsTable",
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "LabAddress": {
+                    "type": "string"
+                },
+                "LabCapacity": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "LabContext": {
+                    "type": "string"
+                },
+                "LabName": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.UsersTable": {
+            "title": "UsersTable",
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "UserAccount": {
+                    "type": "string"
+                },
+                "UserContext": {
+                    "type": "string"
+                },
+                "UserName": {
+                    "type": "string"
+                },
+                "UserPassword": {
+                    "type": "string"
+                },
+                "UserTel": {
+                    "type": "string"
+                },
+                "UserType": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "courses_table",
+            "description": "CoursesTableController operations for CoursesTable\n"
+        },
+        {
+            "name": "labs_table",
+            "description": "LabsTableController operations for LabsTable\n"
+        },
+        {
+            "name": "users_table",
+            "description": "UsersTableController operations for UsersTable\n"
+        }
+    ]
+}
